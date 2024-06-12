@@ -3,52 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Music Playlist Explorer</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
 </head>
 <body>
-    <header>
-        <!-- Your header content here -->
-        <h1>Music Playlist Explorer</h1>
-        <a href="featured/featured.html">Featured</a>
+    <header class="featuredHeader"> 
+        <a href="allplaylists.html">All Playlists</a>
     </header>
 
-    <main> 
-        <!-- Your main content here THIS IS STILL BEING ACCESSED INSTEAD -->
-        <div id="musicModal" class="modal">
-            <div class="modal-content">
-                <img id="shuffle" src="assets/svg/shuffle-solid.svg" alt="shuffle icon">
-                <span class="close">&times;</span>
-                <img id="playlistImage" src="" alt="playlist image">
-                <h1 id="playlistName"></h1>
-                <h3 id="creatorName"></h3>
-                <div id="songList">  
-                </div>
+    <main class="featuredLayout">
+        <div class="featuredPlaylistContainer">
+            <div class="featuredInfo">
+                <!-- Image on left -->
+                <img id="playlistImage" alt="playlistImage">
+                <!-- Playlist Name -->
+                <h2 id="playlistName">Playlist Name</h2>
             </div>
+            <div class="featuredSongs">
+            </div>
+
         </div>
-
-        <!-- Modal Test -->
-
-        <div onclick="musicModal()">
-        </div>
-        
-
-
-        
     </main>
 
 
-    <footer>
-        <!-- Your footer content here -->
-    </footer>
+    <footer></footer>
     <script src="data/data.js"></script>
-    <script src="script.js"></script>
+    <script src="featured.js"></script>
 </body>
 </html>
-
-

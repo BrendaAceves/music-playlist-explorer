@@ -1,8 +1,6 @@
 /* 
     DYNAMICALLY SHOWING EACH PLAYLIST ITEM
 */
-console.log(data); // This should output the contents of your data.js file
-
 let newCardContainer = document.createElement('div');
 newCardContainer.className = 'cardContainer';
 
@@ -54,6 +52,7 @@ let modalOpened = false;
 
 // Event listener to trigger modal popup for each card
 cards.forEach((card, index) => {
+
     modalOpened = false;
     card.addEventListener('click', (event) => {
          // Check if the clicked element is not the likeCount
@@ -64,12 +63,22 @@ cards.forEach((card, index) => {
     });
 
     // Milestone 5: Liking Playlists
+
+    // Adding event listener to heart icons
+    const heartIcons = document.querySelectorAll('.heartIcon');
+    heartIcons.forEach(heartIcon => {
+        heartIcon.addEventListener('click', () => {
+            toggleHeartIcon(heartIcon);
+        });
+    });
+
+
     card.addEventListener('click', (event) => {
         const a = event.target.parentElement.querySelector('.likeCount');
+        const testing = document.querySelector('heartIcon');
         switch (modalOpened) {
             case false:
                 if (a.innerText === "0") {
-                    console.log("is 0");
                     a.innerText = 1;
                 } else if (a.innerText === "1") {
                     a.innerText = 0;
@@ -96,16 +105,22 @@ let modal = document.getElementById("musicModal");
 let span = document.getElementsByClassName("close")[0];
 let songList = document.getElementById('songList');
 
+// Function to toggle heart icon
+function toggleHeartIcon(heartIcon) {
+    if (heartIcon.src.includes('heart-regular.svg')) {
+        heartIcon.src = 'assets/img/heart-filled.svg';
+    } else {
+        heartIcon.src = 'assets/img/heart-regular.svg';
+    }
+}
 
 function test(index) {
-    console.log(index);
     // Accessing All Relevant Index Items
     let playlistName = data.playlists[index].playlist_name;
     let creatorName = data.playlists[index].playlist_creator;
     let songs = data.playlists[index].songs;
 
     // Set the playlist name in the modal
-
     document.getElementById('playlistImage').src = data.playlists[index].playlist_art;
     document.getElementById('playlistName').innerText = playlistName;
     document.getElementById('creatorName').innerText = creatorName;
@@ -118,12 +133,14 @@ function test(index) {
         let song = document.createElement('div');
         song.className = 'box';
 
+        let songInfo = document.createElement('div');
+        songInfo.className = 'songInfo';
+
         // Grabbing Relevant Data
 
         const coverArt = document.createElement('img');
         coverArt.src = `${songs[i].cover_art}`;
         coverArt.className = 'songArt';
-
 
         const songTitle = document.createElement('p');
         songTitle.innerHTML = songs[i].title;
@@ -134,20 +151,38 @@ function test(index) {
         const albumName = document.createElement('p');
         albumName.innerText = songs[i].album;
 
-        song.append(coverArt);
-        song.append(songTitle);
-        song.append(creatorName);
-        song.append(albumName);
-    
+        // Append elements to songInfo div
+        songInfo.appendChild(songTitle);
+        songInfo.appendChild(creatorName);
+        songInfo.appendChild(albumName);
+
+        // Append coverArt to song div
+        song.appendChild(coverArt);
+
+        // Append songInfo div to song div
+        song.appendChild(songInfo);
+
+
+        const time = document.createElement('p');
+        time.className = 'duration';
+
+        time.innerText = songs[i].duration;
+
+        song.appendChild(time);
+
+        // Append song div to songList div
         songList.appendChild(song);
 
     }
+
     // Testing Shuffle
     shuffle(data.playlists[index].songs);
 
     // Display the modal
     modal.style.display = "block";
 }
+
+// Rest of your code...
 
 
 
@@ -172,13 +207,10 @@ window.onclick = function(event) {
 
 // Milestone 6: Shuffling songs/song array
 function shuffle(arr) {
-    console.log("in shuffle");
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        console.log(j);
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-    console.log("arr", arr);
 }
 
 
