@@ -52,9 +52,16 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
+Add the embedded URL code to your animated app walkthrough below, https://www.loom.com/share/ce30dd8a141e45bfbc862d044f1bc37a?sid=8675cf4e-f700-4cbf-afb1-24503b1db6f2`. Make sure the video actually renders and is playable when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
-`ADD_EMBEDDED_CODE_HERE`
+ <div>
+    <a href="https://www.loom.com/share/ce30dd8a141e45bfbc862d044f1bc37a">
+      <p>Music Playlist Explorer - 12 June 2024 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/ce30dd8a141e45bfbc862d044f1bc37a">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/ce30dd8a141e45bfbc862d044f1bc37a-with-play.gif">
+    </a>
+  </div>
 
 ### Reflection
 
