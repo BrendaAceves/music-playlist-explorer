@@ -3,31 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <title>Music Playlist Explorer</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="featuredHeader"> 
-        <a href="allplaylists.html">All Playlists</a>
+    <header>
+        <!-- Your header content here -->
+        <a href="featued.html">Featured</a>
     </header>
+    <!-- <a src="assets/img/heart-regular.svg"></a> -->
 
-    <main class="featuredLayout">
-        <div class="featuredPlaylistContainer">
-            <div class="featuredInfo">
-                <!-- Image on left -->
-                <img id="playlistImage" alt="playlistImage">
-                <!-- Playlist Name -->
-                <h2 id="playlistName">Playlist Name</h2>
+    <main> 
+        <h1 class="allPlaylistsHeader">Music Playlist Explorer</h1>
+        <h2 class="allPlaylistsTitle">All Playlists</h2>
+        
+        <!-- Your main content here THIS IS STILL BEING ACCESSED INSTEAD -->
+        <div id="musicModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="playlistInfo">
+                    <img id="playlistImage" src="" alt="playlist image">
+                    <div class="playlistNames">
+                        <h1 id="playlistName"></h1>  
+                        <h3 id="creatorName"></h3>  
+                        <button id="shuffle">Shuffle</button>    
+                    </div>
+                </div>
+                <div id="songList">
+                    <div id="songInfo">
+                    </div>
+                </div>
             </div>
-            <div class="featuredSongs">
-            </div>
-
         </div>
+
+        <!-- Modal Test -->
+
+        <div onclick="musicModal()">
+        </div>
+        
+
+
+        
     </main>
 
 
-    <footer></footer>
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
     <script src="data/data.js"></script>
-    <script src="featured.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
+
